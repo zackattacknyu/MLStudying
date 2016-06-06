@@ -7,6 +7,7 @@
 \usepackage{graphicx,color}
 \usepackage{verbatim,url}
 \usepackage{listings}
+\usepackage{bbm}
 \usepackage{subcaption} 
 \usepackage{upquote}
 \usepackage[T1]{fontenc}
@@ -55,12 +56,30 @@
 
 \begin{document}
 
-\centerline{Nearest Neighbor Classifiers}
+\section{Nearest Neighbor Methods}
 
-\section{Info}
+\subsection{Nearest Neighbor for Classification}
 
+We are given a set of n ordered pairs $(x_1,y_1)$, $(x_2,y_2)$, ..., $(x_n,y_n)$ where $y_i \in C$ with $C=\{ c_1, ..., c_M \}$ being a set of labels. The nearest neighbor classification $\hat{y}$ for a new point $x$ is $y_j$ where $j$ is the following:
+\[
+\arg \min_j||x-x_j||
+\]
+Let $x_1,x_2,...,x_k$ be the k closest points to $x$. Let $I$ be those indicies $1$ to $k$. The k-nearest nearest neighbor classification for $x$ is the label $c_m$ where $m$ is the following:
+\[
+\arg \max_m \mathbbm{1}_{I}{(y_i=c_m)}
+\]
 
-\subsection*{Part A,B}
+\subsection{Nearest Neighbor for Regression}
+
+We are given a set of n ordered pairs $(x_1,y_1)$, $(x_2,y_2)$, ..., $(x_n,y_n)$ where $y_i \in \mathbbm{R}$. The nearest neighbor regression value $\hat{y}$ for a new point $x$ is $y_j$ where $j$ is the following:
+\[
+\arg \min_j||x-x_j||
+\]
+Let $x_1,x_2,...,x_k$ be the k closest points to $x$. Let $I$ be those indicies $1$ to $k$. The k-nearest nearest neighbor regression for $x$ is the mean of the $y_i$ values:
+\[
+\frac{1}{k} \sum_{i \in I} y_i
+\]
+
 
 
 \end{document}
