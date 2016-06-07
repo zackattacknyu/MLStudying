@@ -87,7 +87,35 @@ Estimate probability of class $p(y=c)$ using a probability model.
 \subsection{Multivariate Gaussian}
 
 \subsection{Naive Bayes}
+\newpage
+\section{Linear Regression}
 
+Define $\hat{y} = \theta x^T$\\
+Let $X$ be set of $m$ points and $Y$ be their target, then error is as follows
+\[
+J(\theta) = \frac{1}{m} (Y - \theta X^T) \cdot (Y- \theta X^T)^T
+\]
+Or defined another way
+\[
+J(\theta) = \frac{1}{m} \sum_{i=1}^m (y_i - \theta x_i^T)^2
+\]
+The partial with respect to paramater $\theta_k$ is as follows
+\[
+\frac{\partial J}{\partial \theta_k} = -\frac{2}{m} \sum_{i=1}^m (y_i - \theta x_i^T)x_{ik}
+\]
+The gradient vector for $J$ is thus
+\[
+\triangledown J(\theta) = -\frac{2}{m} (Y-\theta X^T) \cdot X
+\]
+To minimize the function, we set $\triangledown J(\theta) = 0$ and distribute so our equation becomes
+\[
+Y \cdot X = \theta X^T X
+\]
+Thus we finally have
+\[
+\hat{\theta} = Y \cdot X \cdot (X^T X)^{-1}
+\]
+The term $(X^T X)^{-1}$ is called the pseudo-inverse
 
 
 \end{document}
