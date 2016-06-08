@@ -117,5 +117,18 @@ Thus we finally have
 \]
 The term $(X^T X)^{-1}$ is called the pseudo-inverse
 
+\section{Support Vector Machine}
+
+Want to maximize the margin between two classes. \\
+Define function $f(x) = wx^T + b$ such that $f(x)<-1$ for negative class and $f(x)>1$ for positive class\\
+The vector $w$ is perpendicular to the boundaries\\
+\\
+Closest two points on margin satisfy: \\
+$w x_{pos} + b=1$ and $w x_{neg} + b = -1$\\
+The size of the margin $M$ is as follows
+\[
+M = \frac{2}{\sqrt{w^Tw}}
+\]
+
 
 \end{document}
