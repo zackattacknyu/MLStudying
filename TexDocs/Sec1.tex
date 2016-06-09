@@ -117,18 +117,46 @@ Thus we finally have
 \]
 The term $(X^T X)^{-1}$ is called the pseudo-inverse
 
+\newpage
+
 \section{Support Vector Machine}
 
 Want to maximize the margin between two classes. \\
-Define function $f(x) = wx^T + b$ such that $f(x)<-1$ for negative class and $f(x)>1$ for positive class\\
-The vector $w$ is perpendicular to the boundaries\\
 \\
-Closest two points on margin satisfy: \\
-$w x_{pos} + b=1$ and $w x_{neg} + b = -1$\\
-The size of the margin $M$ is as follows
+Define function $f(x) = wx^T + b$ such that \\
+$f(x)<-1$ for negative class and \\
+$f(x)>1$ for positive class\\
+\\
+Define vector $w$ as perpendicular to the boundaries and closest two points on margin satisfy: \\
+$w x_{pos} + b= +1$ and \\
+$w x_{neg} + b = -1$\\
+\\
+For some scaler $r$ it will hold that $x_{pos} = x_{neg} + rw$\\
+\\
+We want to compute the size of the margin $M=||x_{pos}-x_{neg}|| = ||rw|| = r||w||$\\
+\\
+Need an expression for $r$ first.\\
+Plugging in the expression for $-1$ into the expression for $+1$ we obtain
+\[
+w(x_{neg} + rw) + b = 1
+\] 
+Distributing this out we obtain
+\[
+w x_{neg} + r ||w||^2 + b = 1
+\]
+Collecting the terms for $-1$ we obtain
+\[
+r ||w||^2 - 1 = 1
+\]
+Thus we obtain
+\[
+r = \frac{2}{||w||^2}
+\]
+The size of the margin is now
 \[
 M = \frac{2}{\sqrt{w^Tw}}
 \]
+
 
 
 \end{document}
