@@ -191,6 +191,25 @@ y^{(i)} (w x^{(i)} + b) \geq 1 - \xi^{(i)}
 \xi^{(i)} \geq 0
 \]
 
+\subsection{Lagrange Multipliers for Primal}
 
+Let $f(\theta) = \sum_j {w_j^2}$\\
+Let $g_i(\theta) = 1-y^{(i)}(w \cdot x^{(i)} + b)$\\
+We will introduce the Lagrange multipliers $\alpha_i$\\
+\[
+\theta^* = \arg \min_{\theta} \max_{\alpha \geq 0} f(\theta) + \sum_i \alpha_i g_i(\theta)
+\]
+
+\newpage
+
+\section{Principal Component Analysis}
+
+Take data points $x^{(i)}$\\
+Want to find vectors $v_1,...,v_M$ that most closely reconstruct it\\
+Let $a_1,...,a_M$ be set of scalers\\
+This problem reduces to
+\[
+\min_{v,a} \sum_{i} (x^{(i)} - \sum_{j=1}^M a_j^{(i)}v_j)^2
+\]
 
 \end{document}
