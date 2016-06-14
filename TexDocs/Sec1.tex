@@ -156,6 +156,40 @@ The size of the margin is now
 \[
 M = \frac{2}{\sqrt{w^Tw}}
 \]
+This means that we desire to minimize
+\[
+\sum_{j} w_j^2
+\]
+We need $w x^{(i)} + b \geq 1$ when $y^{(i)}=1$ and \\
+$w x^{(i)} + b \leq -1$ when $y^{(i)}=-1$. We can\\
+simplify this to $y^{(i)} (w x^{(i)} + b) \geq 1$
+
+\newpage
+
+\subsection{Primal Problem}
+
+What we found previously means that finding the maximum margin classifier is equivalent to solving the following quadratic programming primal problem
+\[
+w^{*} = \arg \min_{w} \sum_j w_j^2
+\]
+with the following constraints:
+\[
+y^{(i)} ( w \cdot x^{(i)} + b) \geq 1
+\]
+
+\subsection{Primal Problem, not linearly separable}
+
+We will have slack variable $\xi$ for violated constraints. The primal problem is now the following
+\[
+w^{*} = \arg \min_{w,\xi} \sum_j w_j^2 + R \sum_i \xi^{(i)}
+\]
+subject to the following constraints
+\[
+y^{(i)} (w x^{(i)} + b) \geq 1 - \xi^{(i)}
+\]
+\[
+\xi^{(i)} \geq 0
+\]
 
 
 
