@@ -197,7 +197,34 @@ Let $f(\theta) = \sum_j {w_j^2}$\\
 Let $g_i(\theta) = 1-y^{(i)}(w \cdot x^{(i)} + b)$\\
 We will introduce the Lagrange multipliers $\alpha_i$\\
 \[
-\theta^* = \arg \min_{\theta} \max_{\alpha \geq 0} f(\theta) + \sum_i \alpha_i g_i(\theta)
+\theta^* = \arg \min_{\theta} \max_{\alpha \geq 0} \frac{1}{2} f(\theta) + \sum_i \alpha_i g_i(\theta)
+\]
+
+Since we want points where $\nabla f = \alpha \nabla g$, it holds that 
+\[
+w^* = \sum_i \alpha_i y^{(i)} x^{(i)}
+\]
+Since it holds that $y=wx+b$, we have
+\[
+b = \frac{1}{N_{sv}} \sum_{i \in SV} (y^{(i)} - w \cdot x^{(i)})
+\]
+
+\subsection{Dual Form for SVM}
+
+We use the $w^*$ solution above to write maximize in terms of only $\alpha$ 
+\[
+\max_{\alpha \geq 0} \sum_i [\alpha_i - \frac{1}{2} \sum_j \alpha_i \alpha_j y^{(i)} y^{(j)} (x^{(i)} \cdot x^{(j)})]
+\]
+such that
+\[
+\sum_i \alpha_i y^{(i)} = 0
+\]
+Combine that constraint with the following and we have a quadratic program with $m$ variables and $m+1$ constraints 
+\[
+w^* = \sum_i \alpha_i y^{(i)} x^{(i)}
+\]
+\[
+b = \frac{1}{N_{sv}} \sum_{i \in SV} (y^{(i)} - w \cdot x^{(i)})
 \]
 
 \newpage
