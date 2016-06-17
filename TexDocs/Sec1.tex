@@ -87,6 +87,23 @@ Estimate probability of class $p(y=c)$ using a probability model.
 \subsection{Multivariate Gaussian}
 
 \subsection{Naive Bayes}
+
+We assume each feature $x$ is independent given class of $y$, thus 
+\[
+p(y|x) = \frac{p(y)\prod_i p(x_i|y)}{p(x)}
+\]
+
+\subsection{Bayes Error Rate}
+
+Optimal decision at particular $x$ is as follows
+\[
+\hat{y} = \arg \max_c p(y=c|x)
+\]
+Bayes Error Rate is as follows
+\[
+E_{xy} [y \neq \hat{y} ] = E_x [1 - \max_c p(y=c | x) ]
+\]
+This is the best any classifier can do and it measures hardness of separating y-values
 \newpage
 \section{Linear Regression}
 
