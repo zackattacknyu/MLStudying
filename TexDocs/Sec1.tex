@@ -266,4 +266,22 @@ This problem reduces to
 \min_{v,a} \sum_{i} (x^{(i)} - \sum_{j=1}^M a_j^{(i)}v_j)^2
 \]
 
+\subsection{Eigendecomposition}
+
+This problem is equivalent to finding the ellipsoid that covers the both and computing its orthogonal basis. This means finding the covariance matrix. In the end, the following procedure is done:\\
+\\
+1. Subtract each data by its mean to obtain matrix $X$ of data\\
+2. Scale each dimension by its variance\\
+3. Find the covariance matrix S
+\[
+S = \frac{1}{n} (X-m)^T(X-m)
+\]
+4. Compute the k largest eigenvectors of S to get the k principal components
+
+\subsection{Singular Value Decomposition}
+
+Most common method of finding principal components\\
+Decompose matrix into following $X=USV^T$\\
+The coefficients are obtained from $U \cdot S$ and the $V$ matrix provides the principal vectors
+
 \end{document}
