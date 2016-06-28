@@ -80,11 +80,35 @@ Let $x_1,x_2,...,x_k$ be the k closest points to $x$. Let $I$ be those indicies 
 \frac{1}{k} \sum_{i \in I} y_i
 \]
 
+\newpage
+
 \section{Bayes Classifier}
 
 Estimate probability of class $p(y=c)$ using a probability model. 
 
+\subsection{Gaussian Classifier}
+
+Take $m$ training points $x^{(i)}$ that have class $c$, then the parameters of the Gaussian for $c$ is as follows
+\[
+\mu_c = \frac{1}{m} \sum_{i} x^{(i)}
+\]
+\[
+\sigma_c^2 = \frac{1}{m} \sum_{i} (x^{(i)} - \mu_c)^2
+\]
+
 \subsection{Multivariate Gaussian}
+
+Let $x$ and $\mu$ be vectors, then the multivariate Gaussian is defined as follows
+\[
+N(x; \mu, \Sigma) = \frac{1}{\sqrt{(2 \pi)^d |\Sigma|} } \exp[ -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) ]
+\]
+The MLE estimates for the parameters are as follows: 
+\[
+\hat{\mu} = \frac{1}{m} \sum_i x^{(i)}
+\]
+\[
+\hat{\Sigma} = \frac{1}{m} \sum_i (x^{(i)}-\hat{\mu})^T(x^{(i)}-\hat{\mu})
+\]
 
 \subsection{Naive Bayes}
 
