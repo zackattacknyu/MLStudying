@@ -137,6 +137,17 @@ Simple 2-class classifier with a decision boundary defined as
 \[
 \theta x^T = 0
 \]
+Data is separable if there is a perceptron that correctly predicts all points
+
+\subsection{Perceptron Algorithm}
+Following learning algorithm is used since linear regression can distort solution:\\
+\begin{lstlisting}
+while not done:
+	for all data points i:
+		$\hat{y}^{(i)} = T(\theta x^{(i)})$
+		$\theta \leftarrow \theta + \alpha(y^{(i)}-\hat{y}^{(i)})x^{(i)}$
+\end{lstlisting}
+
 
 \newpage
 \section{Linear Regression}
